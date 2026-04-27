@@ -1,14 +1,14 @@
 pipeline {
     agent any 
     stages {
-        stage('Build') {
+        stage('CHECKOUT') {
             steps {
                 echo 'Building...'
             }
         }
-        stage('Test') {
+        stage('BUILD') {
             steps {
-                echo 'Testing...'
+              git branch: 'main', credentialsId: 'git_hub', url: 'https://github.com/chethanreddy7719/git-repo.git'  
             }
         }
     }
