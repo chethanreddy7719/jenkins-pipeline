@@ -1,13 +1,13 @@
-pipeline {
-    agent any 
-    stages {
+stages {
         stage('CHECKOUT') {
             steps {
+                echo 'Building...'
                 git branch: 'main', credentialsId: 'git_hub', url: 'https://github.com/chethanreddy7719/git-repo.git'
             }
         }
         stage('BUILD') {
             steps {
+              git branch: 'main', credentialsId: 'git_hub', url: 'https://github.com/chethanreddy7719/git-repo.git'  
 		sh '''
 		pwd
               ls -lrt
@@ -15,5 +15,3 @@ pipeline {
             }
         }
     }
- 
-
